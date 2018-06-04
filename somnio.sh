@@ -6,7 +6,7 @@ CONFIGFOLDER='/root/.somnio2'
 COIN_DAEMON='somniod'
 COIN_CLI='somnio-cli'
 COIN_PATH='/usr/local/bin/'
-COIN_TGZ='https://github.com/SMNcoin/SMNCoin/releases/download/1.0/ubu16_mn.tar.gz'
+COIN_TGZ='https://github.com/SMNcoin/SMNCoin/releases/download/1.0.1/smn3.tar.gz'
 COIN_ZIP=$(echo $COIN_TGZ | awk -F'/' '{print $NF}')
 COIN_NAME='somnio'
 COIN_PORT=33888
@@ -43,8 +43,8 @@ function download_node() {
   echo -e "${GREEN}Downloading and Installing VPS $COIN_NAME Daemon${NC}"
   cd $TMP_FOLDER >/dev/null 2>&1
   wget -q $COIN_TGZ
-  tar xzvf ubu16_mn.tar.gz
-  cd ubu16_mn >/dev/null 2>&1
+  tar xzvf smn3.tar.gz
+  cd smn3 >/dev/null 2>&1
   chmod +x $COIN_DAEMON $COIN_CLI
   cp $COIN_DAEMON $COIN_CLI $COIN_PATH
   cd ~ >/dev/null 2>&1
