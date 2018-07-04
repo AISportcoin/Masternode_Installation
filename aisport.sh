@@ -241,7 +241,7 @@ clear
 function important_information() {
  echo
  echo -e "${BLUE}================================================================================================================================${NC}"
- echo -e "${PURPLE}Windows Wallet Guide. https://github.com/Realbityoda/aisport/blob/master/README.md${NC}"
+ echo -e "${PURPLE}Windows Wallet Guide. https://github.com/AISportcoin/Masternode_Installation${NC}"
  echo -e "${BLUE}================================================================================================================================${NC}"
  echo -e "$COIN_NAME Masternode is up and running listening on port ${GREEN}$COIN_PORT${NC}."
  echo -e "Configuration file is: ${RED}$CONFIGFOLDER/$CONFIG_FILE${NC}"
@@ -256,11 +256,11 @@ function important_information() {
  echo -e "Sentinel logs is: ${RED}$CONFIGFOLDER/sentinel.log${NC}"
  fi
  echo -e "${BLUE}================================================================================================================================"
- echo -e "${CYAN}Follow twitter to stay updated.  https://twitter.com/Real_Bit_Yoda${NC}"
+ echo -e "${CYAN}Follow twitter to stay updated.  https://twitter.com/AiScoin${NC}"
  echo -e "${BLUE}================================================================================================================================${NC}"
  echo -e "${GREEN}Donations accepted but never required.${NC}"
  echo -e "${BLUE}================================================================================================================================${NC}"
- echo -e "${YELLOW}BTC: 39SePr8YuS97P2GgYcNm6D4qSG4r2PcGYB"
+
  echo -e "${BLUE}================================================================================================================================${NC}"
 }
 
