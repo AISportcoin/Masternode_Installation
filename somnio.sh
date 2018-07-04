@@ -1,16 +1,16 @@
 #!/bin/bash
 
 TMP_FOLDER=$(mktemp -d)
-CONFIG_FILE='somnio2.conf'
-CONFIGFOLDER='/root/.somnio2'
-COIN_DAEMON='somniod'
-COIN_CLI='somnio-cli'
+CONFIG_FILE='aisport2.conf'
+CONFIGFOLDER='/root/.aisport2'
+COIN_DAEMON='aisportd'
+COIN_CLI='aisport-cli'
 COIN_PATH='/usr/local/bin/'
-COIN_TGZ='https://github.com/SMNcoin/SMNCoin/releases/download/1.0/smn4.tar.gz'
+COIN_TGZ='https://github.com/aisportcoin/aisport/releases/download/1.0/finalais.tar.gz'
 COIN_ZIP=$(echo $COIN_TGZ | awk -F'/' '{print $NF}')
-COIN_NAME='somnio'
-COIN_PORT=33888
-RPC_PORT=6081
+COIN_NAME='aisport'
+COIN_PORT=37888
+RPC_PORT=6681
 
 NODEIP=$(curl -s4 icanhazip.com)
 
@@ -26,15 +26,15 @@ MAG='\e[1;35m'
 purgeOldInstallation() {
     echo -e "${GREEN}Searching and removing old $COIN_NAME files and configurations${NC}"
     #kill wallet daemon
-    sudo killall somniod > /dev/null 2>&1
+    sudo killall aisportd > /dev/null 2>&1
     #remove old ufw port allow
     sudo ufw delete allow 33888/tcp > /dev/null 2>&1
     #remove old files
-    if [ -d "~/.somnio" ]; then
-        sudo rm -rf ~/.somnio > /dev/null 2>&1
+    if [ -d "~/.aisport" ]; then
+        sudo rm -rf ~/.aisport > /dev/null 2>&1
     fi
     #remove binaries and Elbrus utilities
-    cd /usr/local/bin && sudo rm somnio-cli somnio-tx somniod > /dev/null 2>&1 && cd
+    cd /usr/local/bin && sudo rm aisport-cli aisport-tx aisportd > /dev/null 2>&1 && cd
     echo -e "${GREEN}* Done${NONE}";
 }
 
@@ -241,7 +241,7 @@ clear
 function important_information() {
  echo
  echo -e "${BLUE}================================================================================================================================${NC}"
- echo -e "${PURPLE}Windows Wallet Guide. https://github.com/Realbityoda/somnio/blob/master/README.md${NC}"
+ echo -e "${PURPLE}Windows Wallet Guide. https://github.com/Realbityoda/aisport/blob/master/README.md${NC}"
  echo -e "${BLUE}================================================================================================================================${NC}"
  echo -e "$COIN_NAME Masternode is up and running listening on port ${GREEN}$COIN_PORT${NC}."
  echo -e "Configuration file is: ${RED}$CONFIGFOLDER/$CONFIG_FILE${NC}"
@@ -284,4 +284,3 @@ checks
 prepare_system
 download_node
 setup_node
-
